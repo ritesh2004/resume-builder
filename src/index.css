@@ -1,13 +1,70 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Montserrat:wght@100;200&family=Noto+Sans+JP&family=Palette+Mosaic&family=Raleway:wght@200&family=Roboto:wght@500&family=Saira+Condensed:wght@100&family=Ysabeau+Office:wght@300&display=swap');
+
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+.FormCom{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: solid 1px black; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form{
+    margin-top: 100px;
+    border-radius: 7px;
+    width: 400px;
+    background-color: #992699;
+} 
+
+.form-con{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+} 
+
+#con{
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 50px;
+}
+
+#con h1{
+    font-weight: 800;
+    color: #992699;
+    text-shadow: 8px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.form-con span{
+    font-size: x-large;
+    color: white;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Palette Mosaic', cursive;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Saira Condensed', sans-serif;
+    font-family: 'Ysabeau Office', sans-serif;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-right: 10px;
+}
+
+.persional,.work,.academics Form{
+    font-size: large;
+    color: white;
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Palette Mosaic', cursive;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Saira Condensed', sans-serif;
+    font-family: 'Ysabeau Office', sans-serif;
 }
