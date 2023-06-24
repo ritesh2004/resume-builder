@@ -7,6 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Button from '@mui/material/Button';
 import Work from './component/Work';
 import Academic from './component/Academics';
+import Certificates from './component/Certificates';
 
 function FormCom() {
   const [openPdet, setOpenPdet] = useState(false);
@@ -78,9 +79,9 @@ function FormCom() {
         </div>
       </Collapse>
       
-      {/* Certicates */}
+      {/* Certificates */}
 
-    <span>Certicates</span>
+    <span>Certificates</span>
       <Button
       variant='text'
         onClick={() => setOpenCer(!openCer)}
@@ -92,7 +93,7 @@ function FormCom() {
       <hr />
       <Collapse in={openCer}>
         <div id="academic-info">
-          <Academic />
+          <Certificates />
         </div>
       </Collapse>
 
