@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Button from 'react-bootstrap/Button';
 
 
-const Academics = (props) => {
+const Hardskills = (props) => {
 
     const [val, setVal] = useState([]);
 
@@ -27,16 +27,14 @@ const Academics = (props) => {
         setVal(data)
     }
 
-    // console.log(val)
-
-    props.setAc(val)
+    props.setHd(val)
 
     return (
         <>
             <div className="work" id="we">
                 <Form>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>School/College/University</Form.Label>
+                        <Form.Label>Hard Skills</Form.Label>
                         {val.map((data,i)=>{
                             return (
                                 <div style={{padding:'5px',display:'flex',flexDirection:'row',columnGap:'5px'}}>
@@ -57,4 +55,4 @@ const Academics = (props) => {
 
 
 
-export default Academics;
+export default Hardskills;

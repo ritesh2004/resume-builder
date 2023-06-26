@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Montserrat:wght@100;200&family=Noto+Sans+JP&family=Palette+Mosaic&family=Raleway:wght@200&family=Roboto:wght@500&family=Saira+Condensed:wght@100&family=Ysabeau+Office:wght@300&display=swap');
 
-*{padding: 0; margin: 0; box-sizing: border-box;}
+*{padding: 0; margin: 0; box-sizing: border-box; scroll-behavior: smooth;}
 
 .FormCom{
     width: 100%;
@@ -10,11 +10,17 @@
     /* border: solid 1px black; */
 }
 
+.FormCom Button{
+    position: absolute;
+    right: 545px;
+}
+
 .form{
-    margin-top: 100px;
+    margin-top: 50px;
     border-radius: 7px;
-    width: 400px;
+    width: 500px;
     background-color: #992699;
+    margin-bottom: 100px;
 } 
 
 .form-con{
@@ -55,7 +61,7 @@
     margin-right: 10px;
 }
 
-.persional,.work,.academics,.certificates Form{
+.persional,.work,.academics,.certificates,.acheivements,.objective Form{
     font-size: large;
     color: white;
     font-weight: 500;
@@ -68,3 +74,12 @@
     font-family: 'Saira Condensed', sans-serif;
     font-family: 'Ysabeau Office', sans-serif;
 }
+
+/* .cancel-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

@@ -1,0 +1,24 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+.resume{
+    /* border: solid 1px black; */
+    min-height: 100vh;
+}
+
+.resume #col1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.resume img{
+    border: solid 5px rgb(32, 122, 154);
+    border-radius: 125px;
+    /* margin-left: 80px; */
+    margin-top: 10px;
+}
+
+/* .profile{
+    position: relative;
+    top: 50px; 
+}*/
