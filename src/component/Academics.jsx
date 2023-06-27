@@ -40,7 +40,7 @@ const Academics = (props) => {
                         {val.map((data,i)=>{
                             return (
                                 <div style={{padding:'5px',display:'flex',flexDirection:'row',columnGap:'5px'}}>
-                                <Form.Control as="textarea" value={data} onChange={(e)=>{handleChange(e,i)}} rows={1} placeholder="Type here..." />
+                                <Form.Control as="textarea" value={data} onChange={(e)=>{handleChange(e,i)}} rows={1} placeholder="e.g.[yyyy] <school/college/university>" />
                                 <Button className="cancel-btn" onClick={()=>deleteSection(i)} variant="danger"> <CloseIcon/> </Button>
                                 </div>
                             )

@@ -35,11 +35,11 @@ const Acheivements = (props) => {
             <div className="work" id="we">
                 <Form>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Acheivements</Form.Label>
+                        <Form.Label>Achievements</Form.Label>
                         {val.map((data,i)=>{
                             return (
                                 <div style={{padding:'5px',display:'flex',flexDirection:'row',columnGap:'5px'}}>
-                                <Form.Control as="textarea" value={data} onChange={(e)=>{handleChange(e,i)}} rows={1} placeholder="Type here..." />
+                                <Form.Control as="textarea" value={data} onChange={(e)=>{handleChange(e,i)}} rows={1} placeholder="e.g.[yyyy] <achievement>" />
                                 <Button className="cancel-btn" onClick={()=>deleteSection(i)} variant="danger"> <CloseIcon/> </Button>
                                 </div>
                             )

@@ -182,7 +182,7 @@ const Resume = (props) => {
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <Typography variant="h5"> <SchoolIcon/> ACADEMIC INFO</Typography>
+                                        <Typography variant="h5"> <SchoolIcon/> EDUCATION</Typography>
                                         <hr />
                                         <ul>
                                         {academic && academic.map((val,i)=>{
@@ -208,7 +208,7 @@ const Resume = (props) => {
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <Typography variant="h5"> <FlagIcon/> ACHEIVEMENTS</Typography>
+                                        <Typography variant="h5"> <FlagIcon/> ACHIEVEMENTS</Typography>
                                         <hr />
                                         <ul>
                                         {acheivements && acheivements.map((val,i)=>{
