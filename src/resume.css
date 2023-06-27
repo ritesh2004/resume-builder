@@ -9,15 +9,21 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    
 }
 
 .resume img{
     border: solid 5px rgb(32, 122, 154);
-    border-radius: 125px;
-    /* margin-left: 80px; */
-    margin-top: 10px;
+    border-radius: 200px;
+    position: relative;
+    top: 20px;
+    cursor: pointer;
 }
 
+.res-con{
+    border: solid 1px black;
+    
+}
 /* .profile{
     position: relative;
     top: 50px; 

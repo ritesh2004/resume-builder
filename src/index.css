@@ -10,10 +10,6 @@
     /* border: solid 1px black; */
 }
 
-.FormCom Button{
-    position: absolute;
-    right: 545px;
-}
 
 .form{
     margin-top: 50px;
@@ -61,7 +57,7 @@
     margin-right: 10px;
 }
 
-.persional,.work,.academics,.certificates,.acheivements,.objective Form{
+.persional,.work,.academics,.certificates,.acheivements,.objective,.image Form{
     font-size: large;
     color: white;
     font-weight: 500;
@@ -83,3 +79,12 @@
     justify-content: center;
     align-items: center;
 } */
+
+@media screen and (max-width:600px){
+    .resume{
+        display: none;
+    }
+    .preview{
+        display: none;
+    }
+}

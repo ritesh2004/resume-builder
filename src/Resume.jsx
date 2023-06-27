@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -17,32 +17,60 @@ import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import FlagIcon from '@mui/icons-material/Flag';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Button from '@mui/material/Button';
+import { PrintContextConsumer,useReactToPrint } from "react-to-print";
 
 
 const Resume = (props) => {
 
-    // console.log(props.det)
+    console.log(props.det)
+
+    let {academic,acheivements,certificates,hard,languages,objective,profile,projects,soft,work,image} = props.det;
+
+    const inputRef = useRef();
+    // const [image,setImage] = useState(null);
+
+    const handleClick = () =>{
+        inputRef.current.click()
+    }
+    
+    // const handleImage = (e) =>{
+    //     setImage(e.target.files[0])
+    //     // console.log(e.target.files[0])
+    // }
+
+    const componentRef = useRef();
+
+    const printResume = useReactToPrint({
+        content:()=>componentRef.current,
+        documentTitle:"resume",
+        onAfterPrint:()=>alert("Resume Saved")
+    })
+
+
+    console.log(image)
 
     return (
         <>
-            <div className="resume">
-                <Container fluid='lg'>
+            <div className="resume" ref={componentRef}>
+                <Container width="900px" className="res-con">
                     <Row>
-                        <Col id="col1" style={{ backgroundColor: '#03a7a7' }} xs={3}>
-                            <img src={Img} alt="img" width="200px" />
+                        <Col id="col1" style={{ backgroundColor: '#03a7a7',minHeight:'1050px'}} xs={4}>
+                        <div onClick={handleClick}>
+                            {image && <img src={URL.createObjectURL(image)} alt="img" width="150px" height='150px' />}
+                            </div>
                             <br />
                             <div className="profile">
-                                <Typography variant="h5">CAREER OBJECTIVE</Typography>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia earum quos ad voluptatum laborum, voluptate eos itaque esse culpa quasi?</p>
-                                <br />
-                                <Typography variant="h5">CONTACT</Typography>
+                                <Typography className="mt-2" variant="h5">CAREER OBJECTIVE</Typography>
+                                <Typography>{objective}</Typography>
+                                <Typography className="mt-2" variant="h5">CONTACT</Typography>
                                 <Container>
                                     <Row>
                                         <Col xs={1}>
                                             <LocationOnIcon/>
                                         </Col>
                                         <Col>
-                                            Debipur, Purba Bardhaman, West Bengal-713146
+                                            <Typography>{profile['address']}</Typography>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -50,7 +78,7 @@ const Resume = (props) => {
                                             <CallIcon/>
                                         </Col>
                                         <Col>
-                                            +91-6295478328
+                                            <Typography>{profile['contact']}</Typography>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -58,7 +86,7 @@ const Resume = (props) => {
                                             <EmailIcon/>
                                         </Col>
                                         <Col>
-                                            pramanikritesh907@gmail.com
+                                            <Typography>{profile['email']}</Typography>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -66,7 +94,7 @@ const Resume = (props) => {
                                             <GitHubIcon/>
                                         </Col>
                                         <Col>
-                                            riteshpramanik-29
+                                            <Typography>{profile['gprofile']}</Typography>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -74,7 +102,7 @@ const Resume = (props) => {
                                             <FacebookIcon/>
                                         </Col>
                                         <Col>
-                                            riteshpramanik-29
+                                            <Typography>{profile['fprofile']}</Typography>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -82,7 +110,7 @@ const Resume = (props) => {
                                             <LinkedInIcon/>
                                         </Col>
                                         <Col>
-                                            riteshpramanik-29
+                                            <Typography>{profile['lprofile']}</Typography>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -90,49 +118,50 @@ const Resume = (props) => {
                                             <TwitterIcon/>
                                         </Col>
                                         <Col>
-                                            riteshpramanik-29
+                                            <Typography>{profile['tprofile']}</Typography>
                                         </Col>
                                     </Row>
                                 </Container>
-                                <br />
-                                <Typography variant="h5">HARD SKILLS</Typography>
+                                {/* <br /> */}
+                                <Typography className="mt-2" variant="h5">HARD SKILLS</Typography>
                                 <ul>
-                                    <li>Python Programming Language</li>
-                                    <li>Java Programming</li>
-                                    <li>Problem Solving</li>
-                                    <li>React Js[Web Development]</li>
-                                    <li>Django Framework</li>
+                                    {hard && hard.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                 </ul>
-                                <br />
-                                <Typography variant="h5">SOFT SKILLS</Typography>
+                                {/* <br /> */}
+                                <Typography className="mt-2" variant="h5">SOFT SKILLS</Typography>
                                 <ul>
-                                    <li>Good Communication Skill</li>
-                                    <li>Leadership Skill</li>
+                                {soft && soft.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                 </ul>
-                                <br />
-                                <Typography variant="h5">LANGUAGES</Typography>
+                                {/* <br /> */}
+                                <Typography className="mt-2" variant="h5">LANGUAGES</Typography>
                                 <ul>
-                                    <li>English</li>
-                                    <li>Hindi</li>
-                                    <li>Bengali</li>
+                                { languages && languages.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                 </ul>
-                                <br />
-                                <Typography variant="h5">HOBBY/HOBBIES</Typography>
-                                <ul>
-                                    <li>Reading</li>
-                                    <li>Listening music</li>
-                                </ul>
+                                {/* <br /> */}
+                                <Typography className="mt-2" variant="h5">HOBBY</Typography>
+                                <Typography>{profile['hobby']}</Typography>
                             </div>
                         </Col>
-                        <Col xs={8} style={{border:"solid 1px black"}} >
+                        <Col xs={8}>
                             <Container>
                                 <Row>
                                     <Col>
                                     <hr />
                                         <Typography className="text-center" variant="h2">
-                                            Ritesh Pramanik
+                                            {profile['name']}
                                         </Typography>
-                                        <Typography className="text-center" variant="h5">ECE Undergraduate</Typography>
                                     <hr />
                                     </Col>
                                 </Row>
@@ -143,8 +172,11 @@ const Resume = (props) => {
                                         <Typography variant="h5"><AssuredWorkloadIcon/> EXPERIENCES</Typography>
                                         <hr />
                                         <ul>
-                                            <li><Typography>[2022-23] Internship at Oasis Infobyte</Typography></li>
-                                            <li><Typography>[2023] Summer Internship at Code Clause</Typography></li>
+                                        {work && work.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                         </ul>
                                     </Col>
                                 </Row>
@@ -153,9 +185,11 @@ const Resume = (props) => {
                                         <Typography variant="h5"> <SchoolIcon/> ACADEMIC INFO</Typography>
                                         <hr />
                                         <ul>
-                                            <li><Typography>[2020] Secondary at Debipur Station High School with 89.42%</Typography></li>
-                                            <li><Typography>[2020-22] Higher Secondary at Debipur Station High School with 92.4%</Typography></li>
-                                            <li><Typography>[2022-26] BTech in ECE at Academy of Technology</Typography></li>
+                                        {academic && academic.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                         </ul>
                                     </Col>
                                 </Row>
@@ -164,9 +198,11 @@ const Resume = (props) => {
                                         <Typography variant="h5"> <EmojiObjectsIcon/> PROJECTS</Typography>
                                         <hr />
                                         <ul>
-                                            <li><Typography>[2022] Password Generator in Python</Typography></li>
-                                            <li><Typography>[2022] Tic-Tac-Toe Game in Python</Typography></li>
-                                            <li><Typography>[2023] E-commerce Website using React and Django</Typography></li>
+                                        {projects && projects.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                         </ul>
                                     </Col>
                                 </Row>
@@ -175,7 +211,11 @@ const Resume = (props) => {
                                         <Typography variant="h5"> <FlagIcon/> ACHEIVEMENTS</Typography>
                                         <hr />
                                         <ul>
-                                            <li><Typography>[2023] Top 10th Rank in Synapse 2.0</Typography></li>
+                                        {acheivements && acheivements.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                         </ul>
                                     </Col>
                                 </Row>
@@ -184,9 +224,11 @@ const Resume = (props) => {
                                         <Typography variant="h5"> <HistoryEduIcon/> CERTIFICATES</Typography>
                                         <hr />
                                         <ul>
-                                            <li><Typography>[2022] Python for Beginners from Udemy</Typography></li>
-                                            <li><Typography>[2022] HTML and CSS Learning from Cisco</Typography></li>
-                                            <li><Typography>[2023] React and Bootstrap learning from Udemy</Typography></li>
+                                        {certificates && certificates.map((val,i)=>{
+                                        return(
+                                            <li><Typography>{val}</Typography></li>
+                                        )
+                                    })}
                                         </ul>
                                     </Col>
                                 </Row>
@@ -194,6 +236,9 @@ const Resume = (props) => {
                         </Col>
                     </Row>
                 </Container>
+            </div>
+            <div className="text-center mt-5 mb-5">
+                <Button variant="contained" onClick={printResume}>Print Resume</Button>
             </div>
         </>
     )

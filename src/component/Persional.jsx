@@ -7,7 +7,6 @@ const Persional = (props) => {
 
     const [persional,setPersional] = useState({
         name:"",
-        image:"",
         email:"",
         contact:"",
         address:"",
@@ -38,10 +37,6 @@ const Persional = (props) => {
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Full Name</Form.Label>
                     <Form.Control type="text" name="name" onChange={getDetails} value={persional.name} placeholder="Full name" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Profile Images</Form.Label>
-                    <Form.Control type="file" name="image" onChange={getDetails} value={persional.image} placeholder="Profile Images" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Email Id</Form.Label>

@@ -22,6 +22,7 @@ import { Typography } from '@mui/material';
 
 function FormCom(props) {
   const [openPdet, setOpenPdet] = useState(false);
+  const [openImg, setOpenImg] = useState(false);
   const [openCar, setOpenCar] = useState(false);
   const [openLan, setOpenLan] = useState(false);
   const [openWex, setOpenWex] = useState(false);
@@ -34,6 +35,7 @@ function FormCom(props) {
 
 
   const [profile, setProfile] = useState("");
+  const [image, setImage] = useState(null);
   const [languages, setLanguages] = useState("");
   const [work, setWork] = useState("");
   const [hard, setHard] = useState("");
@@ -42,10 +44,13 @@ function FormCom(props) {
   const [academic, setAcademic] = useState("");
   const [certificates, setCertificates] = useState("");
   const [acheivements, setAcheivement] = useState("");
+  const [objective, setObjective] = useState("");
 
   let details = {
     profile:profile,
+    image:image,
     languages:languages,
+    objective:objective,
     work:work,
     hard:hard,
     soft:soft,
@@ -75,13 +80,38 @@ function FormCom(props) {
         onClick={() => setOpenPdet(!openPdet)}
         aria-controls="persional-details"
         aria-expanded={openPdet}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
       <hr />
       <Collapse in={openPdet}>
         <div id="persional-details">
-          
+        <Persional pr = {profile} setPr = {setProfile}  />
+        </div>
+      </Collapse>
+
+    {/* Profile Image */}
+
+    <span>Profile Image[1:1]</span>
+      <Button
+      variant='text'
+        onClick={() => setOpenImg(!openImg)}
+        aria-controls="profile-image"
+        aria-expanded={openImg}
+        className='arrow-btn'
+      >
+        <KeyboardArrowDownIcon />
+      </Button>
+      <hr />
+      <Collapse in={openImg}>
+        <div className='image' id="profile-image">
+        <Form>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Profile Image</Form.Label>
+        <Form.Control type='file' onChange={(e)=>{setImage(e.target.files[0])}}/>
+      </Form.Group>
+    </Form>
         </div>
       </Collapse>
 
@@ -93,6 +123,7 @@ function FormCom(props) {
         onClick={() => setOpenCar(!openCar)}
         aria-controls="career-objective"
         aria-expanded={openCar}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -101,8 +132,8 @@ function FormCom(props) {
         <div className='objective' id="career-objective">
         <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label style={{}}>Career Objective</Form.Label>
-        <Form.Control as="textarea" rows={3} placeholder='Type here...'/>
+        <Form.Label>Career Objective</Form.Label>
+        <Form.Control as="textarea" name='objective' value={objective} onChange={(e)=>{setObjective(e.target.value)}} rows={3} placeholder='Type here...'/>
       </Form.Group>
     </Form>
         </div>
@@ -116,6 +147,7 @@ function FormCom(props) {
         onClick={() => setOpenLan(!openLan)}
         aria-controls="languages"
         aria-expanded={openLan}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -134,6 +166,7 @@ function FormCom(props) {
         onClick={() => setOpenHd(!openHd)}
         aria-controls="hard-skills"
         aria-expanded={openHd}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -152,6 +185,7 @@ function FormCom(props) {
         onClick={() => setOpenSk(!openSk)}
         aria-controls="soft-skills"
         aria-expanded={openSk}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -170,6 +204,7 @@ function FormCom(props) {
         onClick={() => setOpenWex(!openWex)}
         aria-controls="work-experience"
         aria-expanded={openWex}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -188,6 +223,7 @@ function FormCom(props) {
         onClick={() => setOpenPro(!openPro)}
         aria-controls="projects"
         aria-expanded={openPro}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -206,6 +242,7 @@ function FormCom(props) {
         onClick={() => setOpenAc(!openAc)}
         aria-controls="academic-info"
         aria-expanded={openAc}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -224,6 +261,7 @@ function FormCom(props) {
         onClick={() => setOpenCer(!openCer)}
         aria-controls="certificates"
         aria-expanded={openCer}
+        className='arrow-btn'
       >
         <KeyboardArrowDownIcon />
       </Button>
@@ -254,7 +292,7 @@ function FormCom(props) {
       </div>
       </div>
       </div>
-      <Typography variant='h3' className='text-center mb-5'>Preview</Typography>
+      <Typography variant='h3' className='text-center mb-5 preview'>Preview</Typography>
       <div className="resume-con">
           <Resume det={details} />
       </div>
