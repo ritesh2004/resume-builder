@@ -52,19 +52,19 @@ const Persional = (props) => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>GitHub Profile</Form.Label>
-                    <Form.Control type="text" name="gprofile" onChange={getDetails} value={persional.gprofile} placeholder="Profile link..." />
+                    <Form.Control type="text" name="gprofile" onChange={getDetails} value={persional.gprofile} placeholder="Username..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Facebook Profile</Form.Label>
-                    <Form.Control type="text" name="fprofile" onChange={getDetails} value={persional.fprofile} placeholder="Profile link..." />
+                    <Form.Control type="text" name="fprofile" onChange={getDetails} value={persional.fprofile} placeholder="Username..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Twitter Profile</Form.Label>
-                    <Form.Control type="text" name="tprofile" onChange={getDetails} value={persional.tprofile} placeholder="Profile link..." />
+                    <Form.Control type="text" name="tprofile" onChange={getDetails} value={persional.tprofile} placeholder="Username..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>LinkedIn Profile</Form.Label>
-                    <Form.Control type="text" name="lprofile" onChange={getDetails} value={persional.lprofile} placeholder="Profile link..." />
+                    <Form.Control type="text" name="lprofile" onChange={getDetails} value={persional.lprofile} placeholder="Username..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Hobby/Hobbies</Form.Label>
