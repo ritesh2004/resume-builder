@@ -274,7 +274,7 @@ function FormCom(props) {
 
       {/* Acheivments */}
 
-    <span>Acheivements</span>
+    <span>Achievements</span>
       <Button
       variant='text'
         onClick={() => setOpenAch(!openAch)}
